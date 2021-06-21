@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2021-06-21T08:47:46.022+02:00" lastModified="2021-06-21T11:58:35.269+02:00" leaf="true" version="18">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <properties/>
+    <references>nabu.providers.waf.basic.crud.wafRule.services.list</references>
+    <references>be.nabu.eai.module.waf.api.WAFHost</references>
+    <references>nabu.providers.waf.basic.crud.wafRule.types.output</references>
+    <references>nabu.providers.waf.basic.crud.wafHost.types.output</references>
+    <references>java.lang.String</references>
+    <references>nabu.providers.waf.basic.crud.wafHost.services.list</references>
+    <references>nabu.utils.String.split</references>
+    <references>be.nabu.eai.module.waf.api.WAFHostLister.list</references>
+</node>

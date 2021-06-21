@@ -1,0 +1,30 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		disabled="false"
+		id="0b8a4c23-60d3-46e0-9791-15b7b60672b0">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="6d4f6b30-1247-45bc-9fd1-4c922f287262">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="ccb90c4d-e16c-4d0f-b532-e462b0f55351"
+				serviceId="nabu.protocols.http.waf.Services.reload"
+				resultName="result2116ac02e22948d38712af112069d147"
+				temporaryMapping="true"
+				x="28"
+				y="19"
+				invocationOrder="0"
+				target="$all"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="f7d931cf-3d9f-4698-9359-e1f8b26b1d7f"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/path/artifactId</from>
+				<to>wafArtifactId</to>
+			</steps>
+		</steps>
+	</steps>
+</sequence>

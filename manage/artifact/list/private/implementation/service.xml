@@ -1,0 +1,38 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		disabled="false"
+		id="c00af217-cd91-4309-ae1c-e0303778a422">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="45932bdc-9f41-4dae-b934-c824716bae26">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="b8744683-f4d6-4e9f-9d4a-7dc23f07ea7c"
+				serviceId="nabu.utils.reflection.Node.listByType"
+				resultName="result77abc4d1c5c84a05b871c933367eaa9f"
+				temporaryMapping="true"
+				x="81"
+				y="51"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="89f02035-f629-476b-aa67-e73da14cae27"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>be.nabu.eai.module.waf.WAFArtifact</from>
+				<to>type</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="bd8782af-1eef-45eb-8dda-67b842b0d2b9"
+				mask="true"
+				optional="false"
+				fixedValue="false">
+			<from>result77abc4d1c5c84a05b871c933367eaa9f/nodes</from>
+			<to>output/content/artifacts</to>
+		</steps>
+	</steps>
+</sequence>

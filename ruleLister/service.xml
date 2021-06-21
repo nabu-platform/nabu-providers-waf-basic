@@ -1,0 +1,442 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		disabled="false"
+		id="823c34de-cb5e-4c8c-8ecd-f2497bc18652">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="3267c568-2aaa-4cb5-934f-83b9b8190c65">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="dc11a1f5-103a-466e-846e-fd939cf07ece"
+				serviceId="nabu.providers.waf.basic.crud.wafHost.services.list"
+				resultName="resultacfe09b2c14f49cb82b384fbf4ebd098"
+				temporaryMapping="true"
+				x="30"
+				y="30"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="4815ab78-85fe-4290-88d6-b5e45dae47c2"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/wafArtifactId</from>
+				<to>filter/wafArtifactId[0]</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="a8248ea3-8cf9-401c-97ed-a2472d5156be"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>resultacfe09b2c14f49cb82b384fbf4ebd098/results</from>
+			<to>hosts</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="fa209d22-febf-474a-b98c-b00fcabc740c"
+			label="hosts">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="151f61f7-9f24-4854-9941-c15cac5ad5c0"
+				serviceId="nabu.providers.waf.basic.crud.wafRule.services.list"
+				resultName="resultb59cfedc13574033be6659945b49b5c0"
+				temporaryMapping="true"
+				x="152"
+				y="189"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="ded8fd89-22ae-41c8-b8be-582c8526fdc5"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>hosts/id</from>
+				<to>filter/wafHostId</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="da021742-7edd-475d-8309-88fa86df944f"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>resultb59cfedc13574033be6659945b49b5c0/results</from>
+			<to>rules</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.For"
+			disabled="false"
+			id="2a1e72df-68fc-4728-9912-c97d471f6645"
+			variable="host"
+			into="output/hosts">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				disabled="false"
+				id="db17024e-08b0-42a5-a4c3-b28f0b72619e">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="9716b6a9-66f9-45b2-a3f1-954964a176fa"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>host/host</from>
+				<to>output/hosts[0]/host</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="0d43e9a6-84d6-4bed-8fdb-324ddaf48829"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>host/enableHsts</from>
+				<to>output/hosts[0]/enableHsts</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="ab3d95cc-2ef6-4e33-8b08-b08ceedcbe5d"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>host/ioPoolSize</from>
+				<to>output/hosts[0]/ioPoolSize</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="9eb8eb66-921e-42a9-b7b4-b44e8824775a"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>host/processPoolSize</from>
+				<to>output/hosts[0]/processPoolSize</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="cc00c3e0-ac63-4af0-b057-20f7782c5438"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>host/keyAlias</from>
+				<to>output/hosts[0]/keyAlias</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="bee3c6a6-7c56-489e-9297-5c11b041be19"
+					serviceId="nabu.utils.String.split"
+					resultName="result042e792b34d147aeafb8a376c78ee43e"
+					temporaryMapping="true"
+					x="142"
+					y="31"
+					invocationOrder="0"
+					asynchronous="false"
+					recache="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="7fbeae69-d4ba-4c87-a8d2-8aa8a5d68aea"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>host/aliases</from>
+					<to>string</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="85458f2a-e87c-45d3-af93-37ea763cee41"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>[\s]*,[\s]*</from>
+					<to>separator</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="9200e790-d206-4c20-ab7f-24becbb79ba2"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>result042e792b34d147aeafb8a376c78ee43e/parts</from>
+				<to>output/hosts[0]/aliases</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="f1db0921-343a-46d2-80aa-5e1ac60855bd"
+					serviceId="nabu.utils.String.split"
+					resultName="result6e248862d5644e8095f76871a0150b9c"
+					temporaryMapping="true"
+					x="91"
+					y="132"
+					invocationOrder="0"
+					asynchronous="false"
+					recache="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="521602c8-5843-4503-8d9e-c60b7e66e020"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>host/redirects</from>
+					<to>string</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="eaad2da2-5f22-4868-8d21-dc7f43dfec79"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>[\s]*,[\s]*</from>
+					<to>separator</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="814dbf03-6a45-43d0-a322-643a6f875a42"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>result6e248862d5644e8095f76871a0150b9c/parts</from>
+				<to>output/hosts[0]/redirects</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.For"
+				disabled="false"
+				id="46937e6b-9028-43c5-95a7-84ca3a48d98c"
+				variable="rule"
+				into="output/hosts[0]/rules">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+					comment="Map initial rule data"
+					disabled="false"
+					id="3968c583-ffda-4157-a522-71edb52cb836">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="92c3a62c-b275-4de7-ab66-083c4c3dcc14"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>rule/amazonRegion</from>
+					<to>output/hosts[0]/rules[0]/amazonHazelcastCluster/amazonRegion</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="a1a528c1-b2e5-44be-9630-63d8f3977cbc"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>rule/amazonTagKey</from>
+					<to>output/hosts[0]/rules[0]/amazonHazelcastCluster/amazonTagKey</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="e0915de5-4509-472e-8e5c-4cba0c29f874"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>rule/amazonTagValue</from>
+					<to>output/hosts[0]/rules[0]/amazonHazelcastCluster/amazonTagValue</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="80639768-b6ea-4133-a307-237dc2290318"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>rule/hazelcastPort</from>
+					<to>output/hosts[0]/rules[0]/amazonHazelcastCluster/hazelcastPort</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="570f3e14-c40b-41f6-9efc-fd3f20d9701b"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>rule/port</from>
+					<to>output/hosts[0]/rules[0]/amazonHazelcastCluster/port</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="976ab27f-ce60-441a-b27a-e1b04bc64236"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>rule/id</from>
+					<to>output/hosts[0]/rules[0]/id</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="90702c85-4098-460d-9fda-5a7f28dc5fa4"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>rule/enableWebsockets</from>
+					<to>output/hosts[0]/rules[0]/enableWebsockets</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="a032c22e-ab43-4fad-a4c4-e271e74f5ede"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>rule/path</from>
+					<to>output/hosts[0]/rules[0]/path</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+					disabled="false"
+					id="76563a5e-a1e6-45d2-9557-88c5809309c3"
+					label="rule/hosts != null">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+						disabled="false"
+						id="08d030f5-c210-4c97-b935-5ea9ab67bb68"
+						serviceId="nabu.utils.String.split"
+						resultName="result867cb53e6ffa4140ad6ac1fdf8188a0d"
+						temporaryMapping="true"
+						x="74"
+						y="27"
+						invocationOrder="0"
+						asynchronous="false"
+						recache="false">
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+							disabled="false"
+							id="8b0c1514-e357-4bd6-aab3-f69c30588174"
+							mask="false"
+							optional="false"
+							fixedValue="false">
+						<from>rule/hosts</from>
+						<to>string</to>
+					</steps>
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+							disabled="false"
+							id="265d918a-8a5f-417f-9598-1a2ac028ca81"
+							mask="false"
+							optional="false"
+							fixedValue="true">
+						<from>[\s]*,[\s]*</from>
+						<to>separator</to>
+					</steps>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="17e1968c-d4b4-486a-9270-fa9933a6ef3a"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>result867cb53e6ffa4140ad6ac1fdf8188a0d/parts</from>
+					<to>output/hosts[0]/rules[0]/fixedCluster/hosts</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Sequence"
+					disabled="false"
+					id="f9b90ad0-5114-4f28-bbef-f7dc796e6831"
+					label="rule/downtimePages != null">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+						disabled="false"
+						id="811fe907-1474-41d3-beb1-a0230313d223">
+					<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+							disabled="false"
+							id="78cd94bf-75ff-4032-8fa3-c804ffcc4aa1"
+							serviceId="nabu.utils.String.split"
+							resultName="resulta21c9c8488f94903b8fb11dcb4fe8885"
+							temporaryMapping="true"
+							x="70"
+							y="79"
+							invocationOrder="0"
+							asynchronous="false"
+							recache="false">
+						<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+								disabled="false"
+								id="45751ff1-fdd3-4a77-a1d5-ad7cc453ebca"
+								mask="false"
+								optional="false"
+								fixedValue="false">
+							<from>rule/downtimePages</from>
+							<to>string</to>
+						</steps>
+						<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+								disabled="false"
+								id="23dba29b-7d3d-4e15-8198-5a64debf3bb6"
+								mask="false"
+								optional="false"
+								fixedValue="true">
+							<from>[\s]*;[\s]*</from>
+							<to>separator</to>
+						</steps>
+					</steps>
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+							disabled="false"
+							id="c88edd46-09eb-47b1-b904-b037e5bcd92a"
+							mask="false"
+							optional="false"
+							fixedValue="false">
+						<from>resulta21c9c8488f94903b8fb11dcb4fe8885/parts</from>
+						<to>downtimePages</to>
+					</steps>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.For"
+						disabled="false"
+						id="96f2123b-acb4-48d3-91e3-17fdb63b6997"
+						variable="downtimePage"
+						into="output/hosts[0]/rules[0]/downtimePages">
+					<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+							disabled="false"
+							id="e3f78d5e-8f60-4347-b30e-07ab1789964a">
+						<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+								disabled="false"
+								id="5dac6514-fd1d-4681-b723-b966c32bdbaa"
+								serviceId="nabu.utils.String.split"
+								resultName="resultf3963ed69fa14a829b46ac8bc34b77cf"
+								temporaryMapping="true"
+								x="96"
+								y="31"
+								invocationOrder="0"
+								asynchronous="false"
+								recache="false">
+							<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+									disabled="false"
+									id="03863bf0-bccf-47bb-860d-4c7f7a67e5d0"
+									mask="false"
+									optional="false"
+									fixedValue="true">
+								<from>[\s]*,[\s]*</from>
+								<to>separator</to>
+							</steps>
+							<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+									disabled="false"
+									id="02231e64-5d73-49db-a4ec-8aee93efcf86"
+									mask="false"
+									optional="false"
+									fixedValue="false">
+								<from>downtimePage</from>
+								<to>string</to>
+							</steps>
+						</steps>
+						<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+								disabled="false"
+								id="b194cef2-80ef-4de1-b2a3-e66818272e46"
+								mask="false"
+								optional="false"
+								fixedValue="false">
+							<from>resultf3963ed69fa14a829b46ac8bc34b77cf/parts[1]</from>
+							<to>output/hosts[0]/rules[0]/downtimePages[0]/uri</to>
+						</steps>
+						<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+								disabled="false"
+								id="061cf6c0-ef6b-4bc8-997c-4244352dfb3e"
+								mask="false"
+								optional="false"
+								fixedValue="false">
+							<from>resultf3963ed69fa14a829b46ac8bc34b77cf/parts[0]</from>
+							<to>output/hosts[0]/rules[0]/downtimePages[0]/language</to>
+						</steps>
+					</steps>
+					<query>downtimePages</query>
+				</steps>
+			</steps>
+			<query>rules[wafHostId = /host/id]</query>
+		</steps>
+		<query>hosts</query>
+	</steps>
+</sequence>

@@ -1,0 +1,14 @@
+<structure collectionName="wafRules" name="wafRule">
+    <field name="id" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" primaryKey="true" type="java.util.UUID"/>
+    <field comment="A human readable name for the rule" name="name" type="java.lang.String"/>
+    <field foreignKey="nabu.providers.waf.basic.database.types.wafHost:id" name="wafHostId" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" type="java.util.UUID"/>
+    <field comment="If you use amazon, configure the correct region for your host(s)" minOccurs="0" name="amazonRegion" type="java.lang.String"/>
+    <field comment="If you use amazon, configure the correct tag key for your host(s)" minOccurs="0" name="amazonTagKey" type="java.lang.String"/>
+    <field comment="If you use amazon, configure the correct tag value for your host(s)" minOccurs="0" name="amazonTagValue" type="java.lang.String"/>
+    <field comment="Configure the hazelcast port if it is different from the default." minOccurs="0" name="hazelcastPort" type="java.lang.Integer"/>
+    <field comment="Configure the port on the target host(s) that has the application you want to expose." minOccurs="0" name="port" type="java.lang.Integer"/>
+    <field comment="Whether or not to enable websockets on this connection." minOccurs="0" name="enableWebsockets" type="java.lang.Boolean"/>
+    <field comment="A comma seperated list of host ips or dns names (in case you don't use amazon)" minOccurs="0" name="hosts" type="java.lang.String"/>
+    <field comment="The path this should be exposed on (if anything else than the root path)" minOccurs="0" name="path" type="java.lang.String"/>
+    <field comment="A list of downtime pages using the following format &quot;nl,&lt;uri&gt;;fr,&lt;uri&gt;&quot; etc of the relevant downtime pages." minOccurs="0" name="downtimePages" type="java.lang.String"/>
+</structure>

@@ -1,0 +1,7 @@
+<structure interface="be.nabu.eai.module.waf.api.WAFHostLister.list" name="pipeline">
+    <structure name="input"/>
+    <structure name="output"/>
+    <structure collectionName="wafHosts" definition="nabu.providers.waf.basic.crud.wafHost.types.output" maxOccurs="unbounded" minOccurs="0" name="hosts"/>
+    <structure collectionName="wafRules" definition="nabu.providers.waf.basic.crud.wafRule.types.output" maxOccurs="unbounded" minOccurs="0" name="rules"/>
+    <field maxOccurs="unbounded" minOccurs="0" name="downtimePages" type="java.lang.String"/>
+</structure>

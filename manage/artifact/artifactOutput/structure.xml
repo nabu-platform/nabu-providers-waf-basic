@@ -1,0 +1,5 @@
+<structure name="artifactOutput">
+    <structure maxOccurs="unbounded" minOccurs="0" name="artifacts">
+        <field name="id" type="java.lang.String"/>
+    </structure>
+</structure>

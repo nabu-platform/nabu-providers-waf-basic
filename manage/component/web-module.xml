@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<webModule>
+    <path>/api/waf/v1</path>
+    <webFragments>nabu.providers.waf.basic.crud.wafHost</webFragments>
+    <webFragments>nabu.providers.waf.basic.crud.wafRule</webFragments>
+    <webFragments>nabu.providers.waf.basic.manage.artifact.list</webFragments>
+    <webFragments>nabu.providers.waf.basic.manage.artifact.reload</webFragments>
+</webModule>

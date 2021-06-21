@@ -1,0 +1,12 @@
+<structure collectionName="wafHosts" name="wafHost">
+    <field name="id" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" primaryKey="true" type="java.util.UUID"/>
+    <field comment="A human readable name for this host" name="name" type="java.lang.String"/>
+    <field comment="The host domain (if not filled in, the base domain is used)" minOccurs="0" name="host" type="java.lang.String"/>
+    <field comment="A comma separated list of aliases for this host." minOccurs="0" name="aliases" type="java.lang.String"/>
+    <field comment="A comma separated list of redirects" minOccurs="0" name="redirects" type="java.lang.String"/>
+    <field comment="Whether or not you want to enable HSTS for this host" minOccurs="0" name="enableHsts" type="java.lang.Boolean"/>
+    <field minOccurs="0" name="ioPoolSize" type="java.lang.Long"/>
+    <field minOccurs="0" name="processPoolSize" type="java.lang.Long"/>
+    <field comment="You can specify the key alias if relevant" minOccurs="0" name="keyAlias" type="java.lang.String"/>
+    <field comment="The id of the WAF artifact this is for." name="wafArtifactId" type="java.lang.String"/>
+</structure>

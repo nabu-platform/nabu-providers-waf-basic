@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<dataModel>
+    <entries>
+        <synchronize>true</synchronize>
+        <type>nabu.providers.waf.basic.database.types.wafHost</type>
+        <x>125</x>
+        <y>72</y>
+    </entries>
+    <entries>
+        <synchronize>true</synchronize>
+        <type>nabu.providers.waf.basic.database.types.wafRule</type>
+        <x>480</x>
+        <y>411</y>
+    </entries>
+</dataModel>

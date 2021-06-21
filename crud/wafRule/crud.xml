@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<crud>
+    <allowHeaderAsQueryParameter>true</allowHeaderAsQueryParameter>
+    <coreType>nabu.providers.waf.basic.database.types.wafRule</coreType>
+    <createRole>$user</createRole>
+    <deleteRole>$user</deleteRole>
+    <filters>
+        <caseInsensitive>false</caseInsensitive>
+        <key>wafHostId</key>
+        <operator>=</operator>
+        <or>false</or>
+        <input>true</input>
+    </filters>
+    <listRole>$user</listRole>
+    <name>rule</name>
+    <provider>nabu.services.crud.provider.basic.provider</provider>
+    <updateRole>$user</updateRole>
+    <useExplicitLanguage>false</useExplicitLanguage>
+    <useLanguage>false</useLanguage>
+</crud>
