@@ -1,9 +1,11 @@
 <sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		disabled="false"
-		id="823c34de-cb5e-4c8c-8ecd-f2497bc18652">
+		id="823c34de-cb5e-4c8c-8ecd-f2497bc18652"
+		lineNumber="1">
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			disabled="false"
-			id="3267c568-2aaa-4cb5-934f-83b9b8190c65">
+			id="3267c568-2aaa-4cb5-934f-83b9b8190c65"
+			lineNumber="2">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="dc11a1f5-103a-466e-846e-fd939cf07ece"
@@ -38,7 +40,8 @@
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			disabled="false"
 			id="fa209d22-febf-474a-b98c-b00fcabc740c"
-			label="hosts">
+			label="hosts"
+			lineNumber="3">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="151f61f7-9f24-4854-9941-c15cac5ad5c0"
@@ -73,11 +76,13 @@
 	<steps xsi:type="be.nabu.libs.services.vm.step.For"
 			disabled="false"
 			id="2a1e72df-68fc-4728-9912-c97d471f6645"
+			lineNumber="4"
 			variable="host"
 			into="output/hosts">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 				disabled="false"
-				id="db17024e-08b0-42a5-a4c3-b28f0b72619e">
+				id="db17024e-08b0-42a5-a4c3-b28f0b72619e"
+				lineNumber="5">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 					disabled="false"
 					id="9716b6a9-66f9-45b2-a3f1-954964a176fa"
@@ -201,16 +206,36 @@
 				<from>result6e248862d5644e8095f76871a0150b9c/parts</from>
 				<to>output/hosts[0]/redirects</to>
 			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="e9984c37-bb43-41bc-a915-f700b1826be1"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>host/captureErrors</from>
+				<to>output/hosts[0]/captureErrors</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="bedf62f7-747e-42ab-a2fa-ef48cc20060a"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>host/captureSuccessful</from>
+				<to>output/hosts[0]/captureSuccessful</to>
+			</steps>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.For"
 				disabled="false"
 				id="46937e6b-9028-43c5-95a7-84ca3a48d98c"
+				lineNumber="6"
 				variable="rule"
 				into="output/hosts[0]/rules">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 					comment="Map initial rule data"
 					disabled="false"
-					id="3968c583-ffda-4157-a522-71edb52cb836">
+					id="3968c583-ffda-4157-a522-71edb52cb836"
+					lineNumber="7">
 				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 						disabled="false"
 						id="92c3a62c-b275-4de7-ab66-083c4c3dcc14"
@@ -287,7 +312,8 @@
 			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 					disabled="false"
 					id="76563a5e-a1e6-45d2-9557-88c5809309c3"
-					label="rule/hosts != null">
+					label="rule/hosts != null"
+					lineNumber="8">
 				<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 						disabled="false"
 						id="08d030f5-c210-4c97-b935-5ea9ab67bb68"
@@ -331,10 +357,12 @@
 			<steps xsi:type="be.nabu.libs.services.vm.step.Sequence"
 					disabled="false"
 					id="f9b90ad0-5114-4f28-bbef-f7dc796e6831"
-					label="rule/downtimePages != null">
+					label="rule/downtimePages != null"
+					lineNumber="9">
 				<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 						disabled="false"
-						id="811fe907-1474-41d3-beb1-a0230313d223">
+						id="811fe907-1474-41d3-beb1-a0230313d223"
+						lineNumber="10">
 					<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 							disabled="false"
 							id="78cd94bf-75ff-4032-8fa3-c804ffcc4aa1"
@@ -378,11 +406,13 @@
 				<steps xsi:type="be.nabu.libs.services.vm.step.For"
 						disabled="false"
 						id="96f2123b-acb4-48d3-91e3-17fdb63b6997"
+						lineNumber="11"
 						variable="downtimePage"
 						into="output/hosts[0]/rules[0]/downtimePages">
 					<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 							disabled="false"
-							id="e3f78d5e-8f60-4347-b30e-07ab1789964a">
+							id="e3f78d5e-8f60-4347-b30e-07ab1789964a"
+							lineNumber="12">
 						<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 								disabled="false"
 								id="5dac6514-fd1d-4681-b723-b966c32bdbaa"

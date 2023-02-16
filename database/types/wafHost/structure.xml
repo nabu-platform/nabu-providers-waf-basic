@@ -9,4 +9,6 @@
     <field minOccurs="0" name="processPoolSize" type="java.lang.Long"/>
     <field comment="You can specify the key alias if relevant" minOccurs="0" name="keyAlias" type="java.lang.String"/>
     <field comment="The id of the WAF artifact this is for." name="wafArtifactId" type="java.lang.String"/>
+    <field minOccurs="0" name="captureErrors" type="java.lang.Boolean"/>
+    <field minOccurs="0" name="captureSuccessful" type="java.lang.Boolean"/>
 </structure>
